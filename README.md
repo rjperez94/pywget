@@ -35,3 +35,12 @@ Will cause the following to happen:
 3. Each absolute link, referring to a downloaded component, within the root html file is rewritten to a local link. Other absolute links are left unmodified.
 
 It copes with collisions to prevent overwriting files with the same name and when links are rewritten, it takes account of any adjustments to filenames done to prevent collisions.
+
+##Challenge Version
+
+The completion version of “pywget” stops at after it has downloaded the components referenced by the root html page. A recursive version would continue by following the links within every html page referenced. To deal with potential cycles, a common approach is to limit the number of times that a link can be followed. For example, the following tells “pywget”
+to only follow links to a depth of 2:
+
+`pywget(url=" http://homepages.ecs.vuw.ac.nz/~ian/nwen241/index.html ", depth = 2)`
+
+A considerable change to this version from the Completion version is that it follows the structure encoded in each URL.
