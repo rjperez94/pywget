@@ -27,7 +27,7 @@ For example:
 Will cause the following to happen:
 
 1. The specified html file is downloaded to the current directory.
-2. Each link within the root html file ( '<a href>' and '<img>' ) is followed and the referenced component is also downloaded to the current directory.
-3. Each absolute link (referring to a downloaded component) within the root html file is rewritten to a local link. Other absolute links are left unmodified.
+2. Each link within the root html file '<a href> and <img>' is followed and the referenced component is also downloaded to the current directory.
+3. Each absolute link, referring to a downloaded component, within the root html file is rewritten to a local link. Other absolute links are left unmodified.
 
 It copes with collisions to prevent overwriting files with the same name and when links are rewritten, it takes account of any adjustments to filenames done to prevent collisions.
