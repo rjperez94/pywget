@@ -44,3 +44,84 @@ to only follow links to a depth of 2:
 `pywget(url=" http://homepages.ecs.vuw.ac.nz/~ian/nwen241/index.html ", depth = 2)`
 
 A considerable change to this version from the Completion version is that it follows the structure encoded in each URL.
+
+###How to run
+CORE
+import pywget from core
+pywget (url="http://homepages.ecs.vuw.ac.nz/~ian/nwen241/index.html")
+
+Should download just index.html i.e. the exact page
+
+NOTE: make sure that url is a web page NOT web directory, else MAY print
+(depending on permissions):
+print stack trace
+print COMMAND ERROR. INVALID SYNTAX
+
+Collision
+If index.html exists then name as index.1.html and so on
+
+====================
+
+COMPLETION
+import pywget from completion
+pywget (url="http://homepages.ecs.vuw.ac.nz/~ian/nwen241/index.html")
+
+Should download index.html, felids.html, felines.html and GrumpyCat.jpg 
+i.e. THIS page and ALL links and images on THIS page
+
+NOTE: make sure that url is a web page NOT web directory, else MAY print
+(depending on permissions):
+print stack trace
+print COMMAND ERROR. INVALID SYNTAX
+
+Collision
+If index.html exists then rename to index.1.html and so on
+If GrumpyCat.jpg exists then name as GrumpyCat.1.jpg and so on
+
+====================
+
+CHALLENGE
+import pywget from challenge
+pywget (url="http://homepages.ecs.vuw.ac.nz/~ian/nwen241/index.html", depth=2)
+
+Should download index.html, felids.html, felines.html and GrumpyCat.jpg 
+i.e. THIS page and ALL links and images on THIS page
+It should follow file structure when downloaded
+
+NOTES: 
+
+1. make sure that url is a web page NOT web directory, else MAY print
+(depending on permissions):
+print stack trace
+print COMMAND ERROR. INVALID SYNTAX
+
+2. make sure dpeth is an integer (NOT string, decimal, float), else WILL print:
+print stack trace
+print COMMAND ERROR. INVALID SYNTAX
+
+3. if depth specified is 0, print:
+print COMMAND ERROR. Can't have [starting] depth of 0
+
+4. if depth not specified, print:
+TypeErr: pywget() missing one required positional argument depth
+
+Collision
+Look at the folder:
+i.e. pywget (url="http://homepages.ecs.vuw.ac.nz/~ian/nwen241/index.html", depth=2)
+
+if homepages.ecs.vuw.ac.nz NOT exist:
+	make homepages.ecs.vuw.ac.nz folder
+	put files in there, make sub-folders as necessary
+
+homepages.ecs.vuw.ac.nz/
+~ian/
+nwen241/
+
+
+if homepages.ecs.vuw.ac.nz exist
+	RENAME to homepages.ecs.vuw.ac.nz.1 (and so on until available == .2, .3, .4)
+	put files in there, make sub-folders as necessary
+
+homepages.ecs.vuw.ac.nz.1/
+~ian/
+nwen241/
